@@ -1,0 +1,8 @@
+node_modules/
+/packages/angular
+/coverage/
+dist/
+build/
+docs/
+.eslintrc.js
+*.d.ts

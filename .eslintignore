@@ -1,0 +1,8 @@
+node_modules/
+/app/template/
+/coverage/
+dist/
+build/
+docs/
+.eslintrc.js
+*.d.ts
