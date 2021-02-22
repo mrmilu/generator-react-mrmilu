@@ -1,0 +1,7 @@
+/.history
+/.idea
+/node_modules
+/dist
+/build
+/coverage
+/src/assets/tailwind.parsed.css

@@ -1,0 +1,17 @@
+import React from 'react';
+<%_ if (hasTailwind) { -%>import 'twin.macro';<%_ } -%>
+import { AppContainer, AppHeaderContainer } from './app.styles';
+
+function App() {
+  return (
+    <AppContainer>
+      <AppHeaderContainer>
+        <p<%_ if (hasTailwind) { -%> tw='bg-green-200' <%_ } -%>>
+          Sample code
+        </p>
+      </AppHeaderContainer>
+    </AppContainer>
+  );
+}
+
+export default App;

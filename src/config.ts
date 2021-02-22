@@ -1,7 +1,6 @@
 import type { Config } from './types';
 
 const config: Config = {
-  options: {},
   questions: ({ projectName, hasStyledComponents, hasTailwind, hasRedux, hasRecoil, hasMobx, hasAxios, hasApollo }) => {
     let defaultState = hasRedux ? 'redux' : '';
     if (hasRecoil) {
@@ -57,7 +56,8 @@ const config: Config = {
       }
     ];
   },
-  exclude: [/^node_modules/, /^_configs/]
+  exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
+  endCmd: ['git init', 'git add .', 'git commit -m "initial commit"', { cwd: '', cmd: 'ncu -u' }, 'yarn install']
 };
 
 export default config;

@@ -10,8 +10,22 @@ export type ConfigOptions = {
   hasAxios: boolean;
   hasApollo: boolean;
 };
+
+export type CmdAction = {
+  cwd: string;
+  cmd: string;
+};
+
+export type ConfigAnswers = {
+  project_name: string;
+  styled_components: boolean;
+  tailwind: boolean;
+  state: 'redux' | 'recoil' | 'mobx';
+  api: 'axios' | 'apollo';
+};
+
 export type Config = {
-  options: Generator.GeneratorOptions;
-  questions: (ConfigOptions) => Generator.Question[];
+  questions: (opts: ConfigOptions) => Generator.Question<ConfigAnswers>[];
   exclude: RegExp[];
+  endCmd: (string | CmdAction)[];
 };

@@ -1,0 +1,9 @@
+{
+  "generator-react-mrmilu": {
+    "project_name": "project",
+    "styled_components": false,
+    "tailwind": true,
+    "state": "recoil",
+    "api": "axios"
+  }
+}

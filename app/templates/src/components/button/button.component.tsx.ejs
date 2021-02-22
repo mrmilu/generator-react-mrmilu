@@ -1,0 +1,32 @@
+import React from 'react';
+<%_ if (hasRedux) { -%>
+import { useReduxSampleName } from '../../state/sample/sample.hooks';
+<%_ } -%>
+<%_ if (hasRecoil) { -%>
+import { useRecoilState } from 'recoil';
+import { sampleName } from '../../state/sample/sample.atom';
+<%_ } -%>
+
+export type ButtonProps = {
+  /**
+   * Content of button
+   */
+  children: React.ReactNode;
+};
+
+function Button({ children }: ButtonProps) {
+<%_ if (hasRedux) { -%>
+  const [sampleName, setSampleName] = useReduxSampleName();
+<%_ } -%>
+<%_ if (hasRecoil) { -%>
+  const [sampleName, setSampleName] = useRecoilState(sampleName);
+<%_ } -%>
+  return (
+    <div>
+      <p>Name: {sampleName}</p>
+      <button onClick={() => setSampleName('clicked!')}>{children}</button>
+    </div>
+  );
+}
+
+export default React.memo(Button);

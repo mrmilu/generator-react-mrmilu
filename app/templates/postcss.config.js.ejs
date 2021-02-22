@@ -1,0 +1,14 @@
+<%_ if (hasTailwind) { -%>
+const path = require('path');
+<%_ } -%>
+
+module.exports = {
+  plugins: [
+    require('postcss-import'),
+<%_ if (hasTailwind) { -%>
+    require('tailwindcss')(path.resolve(__dirname, 'tailwind.config.js')),
+<%_ } -%>
+    require('autoprefixer'),
+    require('postcss-preset-env')({ stage: 1 })
+  ],
+};
