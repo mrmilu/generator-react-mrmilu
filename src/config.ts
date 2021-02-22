@@ -57,7 +57,14 @@ const config: Config = {
     ];
   },
   exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
-  endCmd: ['git init', 'git add .', 'git commit -m "initial commit"', { cwd: '', cmd: 'ncu -u' }, 'yarn install']
+  endCmd: () => [
+    { command: 'yarn', args: ['install'] },
+    { command: 'yarn', args: ['ncu', '-u'] },
+    { command: 'git', args: ['init'] },
+    { command: 'git', args: ['add', '.'] },
+    { command: 'git', args: ['commit', '-m', '"chore: initial commit"'] },
+    { command: 'yarn', args: ['install'] }
+  ]
 };
 
 export default config;

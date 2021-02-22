@@ -5,11 +5,12 @@ import fs from 'fs';
 import glob from 'glob';
 import type { ConfigAnswers, ConfigOptions } from './types';
 
-const TEMPLATE_BASE_DIR = path.resolve(__dirname, '../app/templates');
-const CONFIGS_BASE_DIR = path.resolve(__dirname, '../app/templates/_configs');
+const TEMPLATE_DIR = '../app/templates';
+const TEMPLATE_BASE_DIR = path.resolve(__dirname, TEMPLATE_DIR);
+const CONFIG_DIR = '_configs';
 
 export default class GeneratorComponent extends Generator {
-  private defaultGlobOptions = { dot: true, nodir: true };
+  private defaultGlobOptions = { dot: true, nodir: true, cwd: TEMPLATE_BASE_DIR };
   private destination = path.resolve('.');
   private projectName = 'react-app';
   private hasStyledComponents = true;
@@ -24,10 +25,8 @@ export default class GeneratorComponent extends Generator {
 
   constructor(args: string | string[], options: Generator.GeneratorOptions) {
     super(args, options);
-    console.log('ARGS', args);
-    console.log('OPTS', options);
     const responses = this.config.getAll();
-    if (responses && Object.keys(responses)) {
+    if (responses && Object.keys(responses).length) {
       this.ask = false;
     }
     this.save = !!options.save;
@@ -42,6 +41,7 @@ export default class GeneratorComponent extends Generator {
   private get _templateData(): ConfigOptions {
     return {
       projectName: this.projectName,
+      projectNameCanonical: this._canonicalName,
       hasStyledComponents: this.hasStyledComponents,
       hasTailwind: this.hasTailwind,
       hasRedux: this.hasRedux,
@@ -58,7 +58,6 @@ export default class GeneratorComponent extends Generator {
       return;
     }
     return this.prompt<ConfigAnswers>(Configuration.questions(this._templateData)).then((answers) => {
-      console.log(this.destination, answers);
       if (answers && Object.keys(answers).length) {
         this._setValues(answers);
       }
@@ -88,16 +87,29 @@ export default class GeneratorComponent extends Generator {
       this._copyFiles('with-axios');
     }
     if (this.hasApollo) {
-      this._copyFile('with-apollo');
+      this._copyFiles('with-apollo');
     }
+  }
+
+  end() {
+    const { endCmd } = Configuration;
+    endCmd(this._templateData)
+      .filter(Boolean)
+      .forEach(({ command, args }) => this._execCommand(command, args));
+  }
+
+  private _execCommand(cmd: string, args: string[]) {
+    const cwd = this.destination;
+    return this.spawnCommandSync(cmd, args, { cwd });
   }
 
   private _copyFiles(dir?: string) {
     const { exclude } = Configuration;
-    const cwd = dir ? path.resolve(CONFIGS_BASE_DIR, dir) : TEMPLATE_BASE_DIR;
-    glob.sync('**/*', { ...this.defaultGlobOptions, cwd }).forEach((file) => {
-      if (!exclude.some((ex) => ex.test(file))) {
-        this._copyFile(file, [this.destination, file]);
+    const toRemove = dir ? path.join(CONFIG_DIR, dir) : '';
+    const find = toRemove ? path.join(toRemove, '**', '*') : '**/*';
+    glob.sync(find, this.defaultGlobOptions).forEach((file) => {
+      if (dir || !exclude.some((ex) => ex.test(file))) {
+        this._copyFile(file, [this.destination, file.replace(toRemove, '')]);
       }
     });
   }

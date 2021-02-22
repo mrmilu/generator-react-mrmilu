@@ -6,7 +6,7 @@ const EIGHT_SECONDS = 8_000;
 export default (auth?: string) => {
   const headers: DmHeaders = {};
   if (!auth && window.localStorage.getItem('token')) {
-    auth = window.localStorage.getItem('token');
+    auth = window.localStorage.getItem('token') || '';
   }
   if (auth) {
     headers['authorization'] = auth;
@@ -17,7 +17,7 @@ export default (auth?: string) => {
     timeout: EIGHT_SECONDS,
     headers
   });
-}
+};
 
 export function parseUrl(url: string, params: Record<string, string | number>) {
   let finalUrl = url;

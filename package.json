@@ -16,7 +16,7 @@
     "build:clean": "rimraf app/index.js*",
     "build:code": "rollup -c",
     "watch": "rollup -cw",
-    "create:sample": "rimraf sample/my-project && yo react-mrmilu sample/my-project",
+    "create:sample": "rimraf sample/my-project && yo ./app/index.js sample/my-project",
     "lint": "eslint --ext .js src/",
     "lint:fix": "yarn lint --fix",
     "clean:root": "rm -fr node_modules",
@@ -27,7 +27,7 @@
   "dependencies": {
     "glob": "7.1.6",
     "mkdirp": "1.0.4",
-    "yeoman-generator": "5.0.0"
+    "yeoman-generator": "4.13.0"
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",

@@ -12,11 +12,11 @@ export const sampleStore = createSlice({
   reducers: {
     setSample: (state, action: PayloadAction<Partial<SampleState>>): SampleState => ({
       ...state,
-      ...action
+      ...action.payload
     }),
-    setSampleName: (state, action: SampleState['sampleName']): SampleState => ({
+    setSampleName: (state, action: PayloadAction<SampleState['sampleName']>): SampleState => ({
       ...state,
-      sampleName: action
+      sampleName: action.payload
     }),
     resetConfiguration: () => INITIAL_STATE
   }

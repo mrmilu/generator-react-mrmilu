@@ -2,6 +2,7 @@ import Generator from 'yeoman-generator';
 
 export type ConfigOptions = {
   projectName: string;
+  projectNameCanonical: string;
   hasStyledComponents: boolean;
   hasTailwind: boolean;
   hasRedux: boolean;
@@ -12,8 +13,8 @@ export type ConfigOptions = {
 };
 
 export type CmdAction = {
-  cwd: string;
-  cmd: string;
+  command: string;
+  args: string[];
 };
 
 export type ConfigAnswers = {
@@ -27,5 +28,5 @@ export type ConfigAnswers = {
 export type Config = {
   questions: (opts: ConfigOptions) => Generator.Question<ConfigAnswers>[];
   exclude: RegExp[];
-  endCmd: (string | CmdAction)[];
+  endCmd: (opts?: ConfigOptions) => (false | CmdAction)[];
 };
