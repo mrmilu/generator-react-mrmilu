@@ -24,6 +24,6 @@ yo react-mrmilu sample-project
 - Json2Typescript
 - React i18n
 - Jest + Jest chain + Jest extended
-- Cypress
+- Cypress (_pending_)
 - Eslint + prettier + stylelint
 - Githooks (husky)
