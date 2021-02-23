@@ -1,3 +1,5 @@
+[![Node.js Package](https://github.com/mrmilu/generator-react-mrmilu/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/mrmilu/generator-react-mrmilu/actions/workflows/npm-publish.yml)
+
 # Generator react
 Yeoman generator for react projects in MrMilu
 
