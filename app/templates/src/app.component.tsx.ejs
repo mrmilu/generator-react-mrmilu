@@ -2,21 +2,36 @@ import React from 'react';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
+<%_ if (hasStyledComponents) { -%>
 import { AppContainer, AppHeaderContainer } from './app.styles';
+<%_ } else { -%>
+import './app.styles.scss';
+<%_ } -%>
 import Title from './components/title/title.component';
 import AccountsList from './components/accounts/accounts-list.component';
+import { useTranslation } from './i18n';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
+<%_ if (hasStyledComponents) { -%>
     <AppContainer>
       <AppHeaderContainer>
-        <p<%_ if (hasTailwind) { -%> tw='bg-green-200' <%_ } -%>>
-          Sample code
-        </p>
+<%_ } else { -%>
+    <div className="App">
+      <header className="App-header">
+<%_ } -%>
+        <p<%_ if (hasTailwind) { -%> tw='bg-green-200' <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
         <AccountsList />
+<%_ if (hasStyledComponents) { -%>
       </AppHeaderContainer>
     </AppContainer>
+<%_ } else { -%>
+      </header>
+    </div>
+<%_ } -%>
   );
 }
 

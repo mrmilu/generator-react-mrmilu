@@ -15,7 +15,7 @@ module.exports = {
   testURL: 'http://localhost/',
   collectCoverage: false,
   coverageDirectory: path.resolve(__dirname, './coverage'),
-  collectCoverageFrom: ['src/**/*.(ts|tsx)', '!src/**/*.d.ts', '!**/types/**/*.ts'],
+  collectCoverageFrom: ['**/*.(ts|tsx)', '!**/*.d.ts'],
   cache: false,
   setupFilesAfterEnv: [path.resolve(__dirname, './jest.setup-after-env.js')],
   testEnvironment: 'jsdom',

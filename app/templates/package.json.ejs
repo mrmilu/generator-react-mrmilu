@@ -3,22 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "description": "<%= projectNameCanonical %> application",
-  "author": "Mr Milu",
+  "author": "Mr Milú",
   "license": "ISC",
   "scripts": {
     "dev": "yarn clean:build && run-p start:watch serve",
     "serve": "live-server build",
+    "build:code": "run-s translate env:prod snowpack:build",
 <%_ if (hasTailwind) { -%>
-    "start:watch": "run-s build:css env:dev snowpack:watch",
-    "start:dev": "run-s build:css env:dev snowpack:dev",
-    "build": "yarn clean:build && run-s build:css build:code",
-    "build:code": "run-s build:css env:prod snowpack:build",
+    "start:watch": "run-s translate build:css env:dev snowpack:watch",
+    "start:dev": "run-s translate build:css env:dev snowpack:dev",
     "build:css": "postcss tailwind.css -o src/assets/tailwind.parsed.css && sleep 2",
+    "build": "run-s clean:build build:css build:code",
 <%_ } else { -%>
-    "start:watch": "run-s env:dev snowpack:watch",
-    "start:dev": "run-s env:dev snowpack:dev",
+    "start:watch": "run-s translate env:dev snowpack:watch",
+    "start:dev": "run-s translate env:dev snowpack:dev",
     "build": "run-s clean:build build:code",
 <%_ } -%>
+    "translate": "ts-node scripts/transform.ts",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
     "env:dev": "cp .env.development .env",
@@ -28,14 +29,15 @@
     "snowpack:watch": "snowpack build --watch",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:fix": "yarn lint --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,sass}\" \"!**/tailwind.css\"",
+    "stylelint:fix": "yarn stylelint --fix",
     "update": "ncu",
     "clean:build": "rimraf build dist src/assets/tailwind.parsed.css",
     "clean:install": "rimraf node_modules",
     "clean": "run-p clean:build clean:install",
     "lint:stage": "eslint --fix",
-    "postinstall": "is-ci || husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "stylelint:stage": "stylelint --fix",
+    "postinstall": "is-ci || husky install"
   },
   "dependencies": {
 <%_ if (hasRedux) { -%>
@@ -103,6 +105,7 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-sonarjs": "0.6.0",
     "husky": "5.1.1",
+    "i18next": "19.8.9",
     "identity-obj-proxy": "3.0.0",
     "is-ci": "3.0.0",
     "jest": "26.6.3",
@@ -118,13 +121,19 @@
     "postcss-import": "14.0.0",
     "postcss-preset-env": "6.7.0",
     "prettier": "2.2.1",
+    "react-i18next": "11.8.7",
     "rimraf": "3.0.2",
-    "snowpack": "3.0.12",
+    "snowpack": "3.0.13",
+    "stylelint": "13.11.0",
+    "stylelint-config-sass-guidelines": "8.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.19.0",
 <%_ if (hasTailwind) { -%>
     "tailwindcss": "2.0.3",
     "tailwindcss-elevation": "1.0.1",
 <%_ } -%>
     "ts-jest": "26.5.1",
+    "ts-node": "9.1.1",
     "typescript": "4.1.5"
   },
   "eslintConfig": {
@@ -147,7 +156,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn lint:stage"
+      "yarn lint:stage",
+      "yarn stylelint:stage"
     ]
   }
 }

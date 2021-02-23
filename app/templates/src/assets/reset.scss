@@ -1,86 +1,107 @@
-*, :after, :before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
 :-moz-focusring {
-  outline: 1px dotted ButtonText
+  outline: 1px dotted ButtonText;
 }
 
 :-moz-ui-invalid {
-  box-shadow: none
+  box-shadow: none;
 }
 
 ::-moz-focus-inner {
   border-style: none;
-  padding: 0
+  padding: 0;
 }
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit
+  appearance: button;
+  font: inherit;
 }
 
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
-  height: auto
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
 }
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none
+  appearance: none;
 }
 
-[role=button], button {
-  cursor: pointer
+[role=button],
+button {
+  cursor: pointer;
 }
 
-[type=button], [type=reset], [type=submit], button {
-  -webkit-appearance: button
+[type=button],
+[type=reset],
+[type=submit],
+button {
+  appearance: button;
 }
 
 [type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px
+  appearance: textfield;
+  outline-offset: -2px;
 }
 
 a {
   color: inherit;
-  text-decoration: inherit
+  text-decoration: inherit;
 }
 
 abbr[title] {
-  text-decoration: underline dotted
+  text-decoration: underline dotted;
 }
 
-audio, canvas, embed, iframe, img, object, svg, video {
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
   display: block;
-  vertical-align: middle
+  vertical-align: middle;
 }
-b, strong {
-  font-weight: bolder
+
+b,
+strong {
+  font-weight: bolder;
 }
 
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color
+  outline: 5px auto -webkit-focus-ring-color;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  font-size: 1em
+  font-size: 1em;
 }
 
-fieldset, ol, ul {
+fieldset,
+ol,
+ul {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 hr {
   border-top-width: 1px;
+  color: inherit;
   height: 0;
-  color: inherit
 }
 
 img {
-  border-style: solid
+  border-style: solid;
 }
 
 //input::placeholder, textarea::placeholder {
@@ -88,49 +109,51 @@ img {
 //}
 
 legend {
-  padding: 0
+  padding: 0;
 }
 
-ol, ul {
-  list-style: none
+ol,
+ul {
+  list-style: none;
 }
 
 progress {
-  vertical-align: baseline
+  vertical-align: baseline;
 }
 
 small {
-  font-size: 80%
+  font-size: 80%;
 }
 
 sub {
-  bottom: -.25em
+  bottom: -.25em;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline
+  vertical-align: baseline;
 }
 
 summary {
-  display: list-item
+  display: list-item;
 }
 
 sup {
-  top: -.5em
+  top: -.5em;
 }
 
 table {
-  border-collapse: collapse
+  border-collapse: collapse;
 }
 
 table {
+  border-color: inherit;
   text-indent: 0;
-  border-color: inherit
 }
 
 textarea {
-  resize: vertical
+  resize: vertical;
 }
