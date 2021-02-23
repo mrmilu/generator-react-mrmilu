@@ -35,6 +35,6 @@ ReactDOM.render(
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
-if (process.env.NODE_ENV === 'development' && import.meta?.hot) {
+if (import.meta.env.SNOWPACK_PUBLIC_ENV === 'development' && import.meta?.hot) {
   import.meta.hot.accept();
 }

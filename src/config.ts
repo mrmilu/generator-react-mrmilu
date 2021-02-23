@@ -36,7 +36,7 @@ const config: Config = {
       {
         type: 'list',
         name: 'state',
-        message: 'Choose tecnology for state manager',
+        message: 'Choose technology for state manager',
         choices: [
           { value: 'redux', name: 'Redux toolkit' },
           { value: 'recoil', name: 'Recoil' },
@@ -47,10 +47,10 @@ const config: Config = {
       {
         type: 'list',
         name: 'api',
-        message: 'Choose tecnology for api calls',
+        message: 'Choose technology for api calls',
         choices: [
           { value: 'axios', name: 'Axios (REST)' },
-          { value: 'apollo', name: 'Apollo (GraphQL)' }
+          { value: 'apollo', name: 'Apollo (GraphQL)', disabled: true }
         ],
         default: defaultApi
       }
@@ -59,7 +59,7 @@ const config: Config = {
   exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
   endCmd: () => [
     { command: 'yarn', args: ['install'] },
-    { command: 'yarn', args: ['ncu', '-u'] },
+    { command: 'yarn', args: ['update', '-u'] },
     { command: 'git', args: ['init'] },
     { command: 'git', args: ['add', '.'] },
     { command: 'git', args: ['commit', '-m', '"chore: initial commit"'] },

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PropsWithChildren, useCallback } from 'react';
+import Title from '../title/title.component';
 <%_ if (hasRedux) { -%>
 import { useReduxSampleName } from '../../state/sample/sample.hooks';
 <%_ } -%>
@@ -7,25 +8,38 @@ import { useRecoilState } from 'recoil';
 import { sampleName } from '../../state/sample/sample.atom';
 <%_ } -%>
 
-export type ButtonProps = {
+export type ButtonProps = Required<PropsWithChildren<unknown>> & {
   /**
-   * Content of button
+   * Indicates if button is disabled
    */
-  children: React.ReactNode;
+  disabled?: boolean;
+  /**
+   * Click event
+   */
+  onClick?: () => void;
 };
 
-function Button({ children }: ButtonProps) {
+function Button({ children, disabled, onClick }: ButtonProps) {
 <%_ if (hasRedux) { -%>
-  const [sampleName, setSampleName] = useReduxSampleName();
+  const [name, setName] = useReduxSampleName();
 <%_ } -%>
 <%_ if (hasRecoil) { -%>
-  const [sampleName, setSampleName] = useRecoilState(sampleName);
+  const [name, setName] = useRecoilState(sampleName);
 <%_ } -%>
+
+  const clickHandler = useCallback(() => {
+    setName('clicked!');
+    if (!disabled && onClick) {
+      onClick();
+    }
+  }, [disabled, onClick]);
+
   return (
-    <div>
-      <p>Name: {sampleName}</p>
-      <button onClick={() => setSampleName('clicked!')}>{children}</button>
-    </div>
+    <button onClick={clickHandler}>
+      {name}
+      <Title>This is a button</Title>
+      {children}
+    </button>
   );
 }
 

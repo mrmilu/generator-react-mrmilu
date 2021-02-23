@@ -3,6 +3,8 @@ import React from 'react';
 import 'twin.macro';
 <%_ } -%>
 import { AppContainer, AppHeaderContainer } from './app.styles';
+import Title from './components/title/title.component';
+import AccountsList from './components/accounts/accounts-list.component';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
         <p<%_ if (hasTailwind) { -%> tw='bg-green-200' <%_ } -%>>
           Sample code
         </p>
+        <Title>Title component</Title>
+        <AccountsList />
       </AppHeaderContainer>
     </AppContainer>
   );

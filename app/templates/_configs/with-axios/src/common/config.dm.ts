@@ -13,7 +13,7 @@ export default (auth?: string) => {
   }
 
   return axios.create({
-    baseURL: process.env.API_URL,
+    baseURL: import.meta.env.SNOWPACK_PUBLIC_API_URL,
     timeout: EIGHT_SECONDS,
     headers
   });
