@@ -32,7 +32,7 @@ function Button({ children, disabled, onClick }: ButtonProps) {
     if (!disabled && onClick) {
       onClick();
     }
-  }, [disabled, onClick]);
+  }, [disabled, onClick, setName]);
 
   return (
     <button onClick={clickHandler}>

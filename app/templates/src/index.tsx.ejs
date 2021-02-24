@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Sentry from '@sentry/react';
 <%_ if (hasRedux) { -%>
 import { Provider } from 'react-redux';
 import store from './state/store';
@@ -13,28 +14,36 @@ import './index.scss';
 <%_ if (hasTailwind) { -%>
 import './assets/tailwind.parsed.css';
 <%_ } -%>
+import { ConfigEnv } from './common/config.env';
+
+Sentry.init({
+  dsn: ConfigEnv.SENTRY_URL,
+  release: `${ConfigEnv.PACKAGE_NAME}-${ConfigEnv.NODE_ENV}@${ConfigEnv.PACKAGE_VERSION}`
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Sentry.ErrorBoundary fallback="An error has occurred">
+    <React.StrictMode>
 <%_ if (hasRedux) { -%>
-    <Provider store={store}>
+      <Provider store={store}>
 <%_ } -%>
 <%_ if (hasRecoil) { -%>
-    <RecoilRoot>
+      <RecoilRoot>
 <%_ } -%>
-    <App />
+      <App />
 <%_ if (hasRedux) { -%>
-    </Provider>
+      </Provider>
 <%_ } -%>
 <%_ if (hasRecoil) { -%>
-    </RecoilRoot>
+      </RecoilRoot>
 <%_ } -%>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </Sentry.ErrorBoundary>,
   document.getElementById('root')
 );
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
-if (import.meta.env.SNOWPACK_PUBLIC_ENV === 'development' && import.meta?.hot) {
+if (ConfigEnv.IS_DEV && import.meta?.hot) {
   import.meta.hot.accept();
 }

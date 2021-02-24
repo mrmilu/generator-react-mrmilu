@@ -1,4 +1,5 @@
 const path = require('path');
+const pkg = require('./package.json');
 
 const isProd = process.env.NODE_ENV !== 'development';
 
@@ -50,13 +51,19 @@ module.exports = {
     knownEntrypoints: ['styled-components'],
     // external: ['react', 'react-dom', 'styled-components'],
     installTypes: true,
-    types: true
+    types: true,
+    env: {
+      NODE_ENV: process.env.NODE_ENV,
+      PACKAGE_NAME: pkg.name,
+      PACKAGE_VERSION: pkg.version,
+      API_URL: process.env.API_URL
+    }
   },
   devOptions: {
     /* ... */
   },
   buildOptions: {
     // clean: false,
-    sourcemap: !isProd
+    sourcemap: true // !isProd
   }
 };

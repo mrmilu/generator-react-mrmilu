@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { DmHeaders } from './types.dm';
+import { ConfigEnv } from './config.env';
 
 const EIGHT_SECONDS = 8_000;
 
@@ -13,7 +14,7 @@ export default (auth?: string) => {
   }
 
   return axios.create({
-    baseURL: import.meta.env.SNOWPACK_PUBLIC_API_URL,
+    baseURL: ConfigEnv.API_URL,
     timeout: EIGHT_SECONDS,
     headers
   });

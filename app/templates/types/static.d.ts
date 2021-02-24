@@ -57,3 +57,14 @@ declare module '*.png' {
 }
 
 /* CUSTOM: ADD YOUR OWN HERE */
+
+interface ImportMeta {
+  readonly env: {
+    readonly IS_DEV: boolean;
+    readonly NODE_ENV: string;
+    readonly API_URL: string;
+    readonly SENTRY_URL: string;
+    readonly PACKAGE_NAME: string;
+    readonly PACKAGE_VERSION: string;
+  };
+}
