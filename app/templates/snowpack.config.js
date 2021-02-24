@@ -1,6 +1,10 @@
 const path = require('path');
 const pkg = require('./package.json');
 
+// Define other environment variables
+process.env.SNOWPACK_PUBLIC_PACKAGE_NAME = pkg.name;
+process.env.SNOWPACK_PUBLIC_PACKAGE_VERSION = pkg.version;
+
 const isProd = process.env.NODE_ENV !== 'development';
 
 const pluginSassOptions = {
@@ -22,7 +26,6 @@ module.exports = {
   exclude: ['**/__tests__/**/*', '**/README.md'],
   plugins: [
     ['@snowpack/plugin-sass', pluginSassOptions],
-    // '@snowpack/plugin-react-refresh',
     [
       '@snowpack/plugin-babel',
       {
@@ -33,7 +36,6 @@ module.exports = {
         }
       }
     ],
-    '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
     '@snowpack/plugin-postcss'
   ],
@@ -51,13 +53,7 @@ module.exports = {
     knownEntrypoints: ['styled-components'],
     // external: ['react', 'react-dom', 'styled-components'],
     installTypes: true,
-    types: true,
-    env: {
-      NODE_ENV: process.env.NODE_ENV,
-      PACKAGE_NAME: pkg.name,
-      PACKAGE_VERSION: pkg.version,
-      API_URL: process.env.API_URL
-    }
+    types: true
   },
   devOptions: {
     /* ... */
