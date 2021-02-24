@@ -14,4 +14,8 @@ export const AppHeaderContainer = styled.header`
   justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  select {
+    ${tw`text-black`}
+  }
 `;

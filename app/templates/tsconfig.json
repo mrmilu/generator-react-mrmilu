@@ -25,7 +25,7 @@
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "jsx": "react",
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": false,
     "noImplicitAny": true,

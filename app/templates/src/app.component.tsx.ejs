@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
@@ -12,7 +12,14 @@ import AccountsList from './components/accounts/accounts-list.component';
 import { useTranslation } from './i18n';
 
 function App() {
-  const { t } = useTranslation();
+  const { t, changeLanguage, activeLanguage, languages } = useTranslation();
+
+  const handleChange = useCallback(
+    (lang: string) => {
+      void changeLanguage(lang as typeof languages[0]);
+    },
+    [changeLanguage]
+  );
 
   return (
 <%_ if (hasStyledComponents) { -%>
@@ -22,7 +29,12 @@ function App() {
     <div className="App">
       <header className="App-header">
 <%_ } -%>
-        <p<%_ if (hasTailwind) { -%> tw='bg-green-200' <%_ } -%>>{t('title')}</p>
+        <select name="lang" id="lang" value={activeLanguage} onChange={(e) => handleChange(e.target.value)}>
+          {languages.map((lang) => (
+            <option key={lang} value={lang}>{lang.toUpperCase()}</option>
+          ))}
+        </select>
+        <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
         <AccountsList />
 <%_ if (hasStyledComponents) { -%>
