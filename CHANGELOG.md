@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.1.1...v1.2.0) (2021-02-24)
+
+
+### Features
+
+* add sentry support ([2f3dfc2](https://github.com/mrmilu/generator-react-mrmilu/commit/2f3dfc24b6f8df5deb7b2197d7885e2985c628f6)), closes [#5](https://github.com/mrmilu/generator-react-mrmilu/issues/5)
+
 ## [1.1.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.1.0...v1.1.1) (2021-02-24)
 
 
