@@ -1,7 +1,7 @@
 {
   "name": "generator-react-mrmilu",
-  "description": "Yeoman generator for template project in react for MrMilu",
-  "version": "1.0.0",
+  "description": "Yeoman generator for template project in react for MrMilú",
+  "version": "0.0.0-development",
   "main": "app/index.js",
   "license": "MIT",
   "repository": {
@@ -46,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "4.15.2",
     "@typescript-eslint/parser": "4.15.2",
     "builtin-modules": "3.2.0",
-    "esbuild": "0.8.50",
+    "esbuild": "0.8.51",
     "eslint": "7.20.0",
     "eslint-config-prettier": "8.0.0",
     "eslint-plugin-prettier": "3.3.1",
@@ -64,7 +64,7 @@
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-node-globals": "1.4.0",
     "semantic-release": "17.3.9",
-    "typescript": "4.1.5",
+    "typescript": "4.2.2",
     "yo": "3.1.1"
   }
 }
