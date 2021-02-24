@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.0.0...v1.1.0) (2021-02-24)
+
+
+### Features
+
+* add i18next ([57b581a](https://github.com/mrmilu/generator-react-mrmilu/commit/57b581aa12f7b70930739ce6e62f44b118078f78))
+
 # 1.0.0 (2021-02-24)
 
 
