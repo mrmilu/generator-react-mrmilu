@@ -9,7 +9,7 @@
     "url": "https://github.com/mrmilu/generator-react-mrmilu.git"
   },
   "files": [
-    "app"
+    "app/"
   ],
   "scripts": {
     "build": "run-s build:clean build:code",
