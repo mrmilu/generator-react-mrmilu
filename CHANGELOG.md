@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.1.0...v1.1.1) (2021-02-24)
+
+
+### Bug Fixes
+
+* update content app ([644b465](https://github.com/mrmilu/generator-react-mrmilu/commit/644b4650f73bd4aa5e569d5054d0a1ebf9bda796))
+
 # [1.1.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.0.0...v1.1.0) (2021-02-24)
 
 
