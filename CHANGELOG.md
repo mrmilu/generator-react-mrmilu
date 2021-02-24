@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.2.0...v1.2.1) (2021-02-24)
+
+
+### Bug Fixes
+
+* correct usage of environment variables ([af822b5](https://github.com/mrmilu/generator-react-mrmilu/commit/af822b5a88ce9432a01105cd2bc84e4945ba5bde))
+
 # [1.2.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.1.1...v1.2.0) (2021-02-24)
 
 
