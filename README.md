@@ -1,5 +1,9 @@
 [![Node.js Package](https://github.com/mrmilu/generator-react-mrmilu/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/mrmilu/generator-react-mrmilu/actions/workflows/npm-publish.yml)
 
+![dependencies](https://img.shields.io/david/mrmilu/generator-react-mrmilu?style=flat-square)
+![devDependencies](https://img.shields.io/david/dev/mrmilu/generator-react-mrmilu?style=flat-square)
+[![npm version](https://img.shields.io/npm/v/generator-react-mrmilu?style=flat-square)](https://www.npmjs.com/package/generator-react-mrmilu)
+
 # Generator react
 Yeoman generator for react projects in MrMilu
 
