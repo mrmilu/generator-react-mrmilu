@@ -1,7 +1,7 @@
 {
   "name": "generator-react-mrmilu",
   "description": "Yeoman generator for template project in react for MrMilú",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "main": "app/index.js",
   "license": "MIT",
   "repository": {
