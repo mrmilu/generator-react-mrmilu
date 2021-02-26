@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.3.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.2.1...v1.3.0) (2021-02-26)
+
+
+### Features
+
+* add e2e in monorepo ([d16e329](https://github.com/mrmilu/generator-react-mrmilu/commit/d16e32961594b1b4a1489106ab74e0b53139be74))
+
 ## [1.2.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.2.0...v1.2.1) (2021-02-24)
 
 
