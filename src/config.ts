@@ -59,6 +59,7 @@ const config: Config = {
   exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
   endCmd: () => [
     { command: 'yarn', args: ['install'] },
+    { command: 'yarn', args: ['lint:fix'] },
     { command: 'yarn', args: ['update', '-u'] },
     { command: 'git', args: ['init'] },
     { command: 'git', args: ['add', '.'] },

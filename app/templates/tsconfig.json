@@ -38,10 +38,6 @@
     "strictNullChecks": true,
     "target": "ESNext"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
   "exclude": [
     "node_modules"
   ]

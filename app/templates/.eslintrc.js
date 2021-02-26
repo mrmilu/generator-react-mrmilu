@@ -1,19 +1,16 @@
 module.exports = {
   root: true,
   settings: {
-    react: {
-      version: 'detect'
-    },
     'import/parsers': {
       'babel-eslint': ['.js', '.jsx'],
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     },
-    'import/extensions': ['.ts', '.tsx']
+    'import/extensions': ['.ts', '.tsx', '.js', '.jsx']
   },
   env: {
     browser: true,
@@ -29,9 +26,6 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
     ecmaVersion: 2020,
     sourceType: 'module',
     project: './tsconfig.json'
@@ -42,14 +36,15 @@ module.exports = {
       parser: 'babel-eslint'
     },
     {
+      files: ['jest.config.js'],
+      rules: {
+        'monorepo/no-relative-import': 0
+      }
+    },
+    {
       files: ['*.ts', '*.tsx'],
-      plugins: ['@typescript-eslint', 'react', 'react-hooks'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended'
-      ],
+      plugins: ['@typescript-eslint'],
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking'],
       parser: '@typescript-eslint/parser',
       rules: {
         // Resets
@@ -113,13 +108,7 @@ module.exports = {
         ],
         'no-empty-function': 0,
         '@typescript-eslint/no-empty-function': 2,
-        '@typescript-eslint/no-unnecessary-type-assertion': 2,
-
-        // Generic react
-        'react/prop-types': 0,
-        // 'react/display-name': 0,
-        'react-hooks/rules-of-hooks': 2,
-        'react-hooks/exhaustive-deps': 1
+        '@typescript-eslint/no-unnecessary-type-assertion': 2
       }
     },
     {
@@ -150,11 +139,16 @@ module.exports = {
     'comma-spacing': 2,
     'comma-style': 2,
     'computed-property-spacing': 2,
+    // 'func-style': [2, 'expression', { 'allowArrowFunctions': true }],
+    // 'multiline-ternary': [1, 'always-multiline'],
     'operator-linebreak': [2, 'after', { overrides: { '?': 'before', ':': 'before' } }],
+    // 'linebreak-style': 2,
     'space-in-parens': 2,
 
+    // 'arrow-body-style': [2, 'as-needed', { 'requireReturnForObjectLiteral': true }],
     'constructor-super': 2,
     'dot-notation': 0,
+    // 'eol-last': 2,
     'guard-for-in': 2,
     'no-bitwise': 0,
     'no-caller': 2,

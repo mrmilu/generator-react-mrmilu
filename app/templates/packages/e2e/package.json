@@ -1,0 +1,35 @@
+{
+  "name": "@<%= projectName %>/e2e",
+  "version": "0.0.1",
+  "private": true,
+  "description": "<%= projectNameCanonical %> e2e tests for components with react",
+  "author": "Mr Milú",
+  "license": "ISC",
+  "scripts": {
+    "cy:open:local": "cross-env ENVIRONMENT=local cypress open",
+    "cy:run:local": "cross-env ENVIRONMENT=local cypress run",
+    "cy:open:dev": "cross-env ENVIRONMENT=dev cypress open",
+    "cy:run:dev": "cross-env ENVIRONMENT=dev cypress run",
+    "cy:open:prod": "cross-env ENVIRONMENT=prod cypress open",
+    "cy:run:prod": "cross-env ENVIRONMENT=prod cypress run"
+  },
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "5.6.0",
+    "@testing-library/cypress": "7.0.4",
+    "@testing-library/jest-dom": "5.11.9",
+    "@types/chai": "4.2.15",
+    "@types/mocha": "8.2.1",
+    "crypto-browserify": "3.12.0",
+    "cypress": "6.5.0",
+    "cypress-audit": "0.3.0",
+    "cypress-jest-adapter": "0.1.1",
+    "cypress-plugin-snapshots": "1.4.4",
+    "dotenv": "8.2.0",
+    "esbuild": "0.8.52",
+    "esbuild-loader": "2.9.2",
+    "eslint-plugin-cypress": "2.11.2",
+    "path-browserify": "1.0.1",
+    "stream-browserify": "3.0.0",
+    "webpack": "5.24.2"
+  }
+}

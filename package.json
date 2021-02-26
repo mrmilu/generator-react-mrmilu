@@ -27,7 +27,7 @@
   "dependencies": {
     "glob": "7.1.6",
     "mkdirp": "1.0.4",
-    "yeoman-generator": "4.13.0"
+    "yeoman-generator": "5.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.0",
@@ -46,9 +46,9 @@
     "@typescript-eslint/eslint-plugin": "4.15.2",
     "@typescript-eslint/parser": "4.15.2",
     "builtin-modules": "3.2.0",
-    "esbuild": "0.8.51",
+    "esbuild": "0.8.52",
     "eslint": "7.20.0",
-    "eslint-config-prettier": "8.0.0",
+    "eslint-config-prettier": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-sonarjs": "0.6.0",

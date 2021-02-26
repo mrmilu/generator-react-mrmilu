@@ -3,5 +3,3 @@ node_modules
 dist/
 build/
 docs/
-.eslintrc.js
-*.d.ts

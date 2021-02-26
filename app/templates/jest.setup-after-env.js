@@ -14,13 +14,3 @@ jest.setTimeout(JEST_TIMEOUT);
 beforeEach(() => {
   expect.hasAssertions();
 });
-
-// Specific for react
-require('@testing-library/jest-dom/extend-expect');
-const { cleanup } = require('./tests/test-utils');
-// Optional for styled components
-require('jest-styled-components');
-
-afterEach(() => {
-  cleanup();
-});
