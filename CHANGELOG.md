@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.0...v1.3.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([f5c9620](https://github.com/mrmilu/generator-react-mrmilu/commit/f5c9620c9c1cf894ce83df68b9af99f841933f68))
+* **tailwind:** fix include in styled components ([25c27f9](https://github.com/mrmilu/generator-react-mrmilu/commit/25c27f91cf7c7508b9e151ec072598f5c5bda8dc))
+
 # [1.3.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.2.1...v1.3.0) (2021-02-26)
 
 
