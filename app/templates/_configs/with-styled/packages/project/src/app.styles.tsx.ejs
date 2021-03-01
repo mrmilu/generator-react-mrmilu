@@ -1,12 +1,18 @@
 import styled from 'styled-components';
+<%_ if (hasTailwind) { -%>
 import tw from 'twin.macro';
+<%_ } -%>
 
 export const AppContainer = styled.div`
   text-align: center;
 `;
 
 export const AppHeaderContainer = styled.header`
+<%_ if (hasTailwind) { -%>
   ${tw`bg-warning`}
+<%_ } else { -%>
+  background: #aaa000;
+<%_ } -%>
   min-height: 100vh;
   display: flex;
   flex-direction: column;
