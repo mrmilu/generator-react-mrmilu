@@ -20,16 +20,16 @@
     "@types/chai": "4.2.15",
     "@types/mocha": "8.2.1",
     "crypto-browserify": "3.12.0",
-    "cypress": "6.5.0",
+    "cypress": "6.6.0",
     "cypress-audit": "0.3.0",
     "cypress-jest-adapter": "0.1.1",
     "cypress-plugin-snapshots": "1.4.4",
     "dotenv": "8.2.0",
-    "esbuild": "0.8.54",
+    "esbuild": "0.8.56",
     "esbuild-loader": "2.9.2",
     "eslint-plugin-cypress": "2.11.2",
     "path-browserify": "1.0.1",
     "stream-browserify": "3.0.0",
-    "webpack": "5.24.2"
+    "webpack": "5.24.3"
   }
 }

@@ -27,7 +27,7 @@
   "dependencies": {
     "glob": "7.1.6",
     "mkdirp": "1.0.4",
-    "yeoman-generator": "5.0.1"
+    "yeoman-generator": "4.13.0"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
@@ -43,10 +43,10 @@
     "@semantic-release/release-notes-generator": "9.0.1",
     "@types/jest": "26.0.20",
     "@types/yeoman-generator": "4.11.3",
-    "@typescript-eslint/eslint-plugin": "4.15.2",
-    "@typescript-eslint/parser": "4.15.2",
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
     "builtin-modules": "3.2.0",
-    "esbuild": "0.8.54",
+    "esbuild": "0.8.56",
     "eslint": "7.21.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
@@ -63,8 +63,8 @@
     "rollup-plugin-esbuild": "2.6.1",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-node-globals": "1.4.0",
-    "semantic-release": "17.4.0",
-    "typescript": "4.2.2",
+    "semantic-release": "17.4.1",
+    "typescript": "4.2.3",
     "yo": "3.1.1"
   }
 }
