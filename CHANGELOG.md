@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.1...v1.3.2) (2021-03-05)
+
+
+### Bug Fixes
+
+* **deps:** usage of yeoman-generator v4 ([f2dcf1b](https://github.com/mrmilu/generator-react-mrmilu/commit/f2dcf1be7f0142955fa9d9a06b1ff92e7edc7f52))
+
 ## [1.3.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.0...v1.3.1) (2021-03-01)
 
 
