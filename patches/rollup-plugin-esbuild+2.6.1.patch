@@ -1,0 +1,13 @@
+diff --git a/node_modules/rollup-plugin-esbuild/dist/index.js b/node_modules/rollup-plugin-esbuild/dist/index.js
+index 34f98a7..1e35aa0 100644
+--- a/node_modules/rollup-plugin-esbuild/dist/index.js
++++ b/node_modules/rollup-plugin-esbuild/dist/index.js
+@@ -78,7 +78,7 @@ var index = (options2 = {}) => {
+     name: "esbuild",
+     async buildStart() {
+       if (!service) {
+-        service = await esbuild.startService();
++        service = esbuild;
+       }
+     },
+     resolveId(importee, importer) {

@@ -11,7 +11,7 @@ const CONFIG_DIR = '_configs';
 
 export default class GeneratorComponent extends Generator {
   private defaultGlobOptions = { dot: true, nodir: true, cwd: TEMPLATE_BASE_DIR };
-  private destination = path.resolve('.');
+  private readonly destination = path.resolve('.');
   private projectName = 'react-app';
   private hasStyledComponents = true;
   private hasTailwind = true;
@@ -20,11 +20,15 @@ export default class GeneratorComponent extends Generator {
   private hasMobx = false;
   private hasAxios = true;
   private hasApollo = false;
-  private ask = true;
-  private save = false;
+  private readonly ask: boolean = true;
+  private readonly save: boolean = false;
+  private readonly update: boolean = true;
 
   constructor(args: string | string[], options: Generator.GeneratorOptions) {
     super(args, options);
+    if (options && options['noUpdate']) {
+      this.update = false;
+    }
     const responses = this.config.getAll();
     if (responses && Object.keys(responses).length) {
       this.ask = false;
@@ -48,7 +52,8 @@ export default class GeneratorComponent extends Generator {
       hasRecoil: this.hasRecoil,
       hasMobx: this.hasMobx,
       hasAxios: this.hasAxios,
-      hasApollo: this.hasApollo
+      hasApollo: this.hasApollo,
+      update: this.update
     };
   }
 
@@ -95,12 +100,14 @@ export default class GeneratorComponent extends Generator {
     const { endCmd } = Configuration;
     endCmd(this._templateData)
       .filter(Boolean)
-      .forEach(({ command, args }) => this._execCommand(command, args));
+      .forEach(({ command, args }) => {
+        this._execCommand(command, args);
+      });
   }
 
   private _execCommand(cmd: string, args: string[]) {
     const cwd = this.destination;
-    return this.spawnCommandSync(cmd, args, { cwd });
+    this.spawnCommandSync(cmd, args, { cwd });
   }
 
   private _copyFiles(dir?: string) {
