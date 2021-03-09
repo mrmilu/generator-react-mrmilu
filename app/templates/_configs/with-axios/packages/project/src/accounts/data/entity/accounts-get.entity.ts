@@ -1,5 +1,5 @@
 import { JsonObject, JsonProperty } from 'json2typescript';
-import type { AccountsGetData, AccountsGetResponse } from './accounts-get.types';
+import type { AccountsGetData, AccountsGetResponse } from '../../domain/entity/accounts-get.types';
 import { SupportEntity } from './accounts.entity';
 
 @JsonObject('AccountsGetDataEntity')

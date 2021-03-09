@@ -1,9 +1,9 @@
 import { JsonConvert } from 'json2typescript';
-import Api, { parseUrl } from '../../../common/config.dm';
+import Api, { parseUrl } from '../../common/data/config.dm';
 import urls from './accounts.urls';
-import type { AccountsListResponse } from './entity/accounts-list.types';
+import type { AccountsListResponse } from '../domain/entity/accounts-list.types';
 import { AccountsListResponseEntity } from './entity/accounts-list.entity';
-import type { AccountsGetResponse } from './entity/accounts-get.types';
+import type { AccountsGetResponse } from '../domain/entity/accounts-get.types';
 import { AccountsGetDataEntity } from './entity/accounts-get.entity';
 
 const jsonConverter = new JsonConvert();

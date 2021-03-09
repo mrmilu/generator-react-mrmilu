@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useAccountsDm } from './dm/accounts.hook';
-import type { AccountsListDataEntity } from './dm/entity/accounts-list.entity';
+import { useAccountsDm } from '../data/accounts.hook';
+import type { AccountsListDataEntity } from '../data/entity/accounts-list.entity';
+import { getAccountsList } from "../data/accounts.dm";
 
 export type AccountsListProps = {
   /**
@@ -10,14 +11,13 @@ export type AccountsListProps = {
 };
 
 function AccountsList({ page = 1 }: AccountsListProps) {
-  const { getAccountsList } = useAccountsDm();
   const [list, setList] = useState<AccountsListDataEntity[]>([]);
 
   useEffect(() => {
     void getAccountsList(page).then((response) => {
       setList(response.data);
     });
-  }, [getAccountsList, page]);
+  }, [page]);
 
   return (
     <ul>
