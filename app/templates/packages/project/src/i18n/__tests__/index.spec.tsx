@@ -1,20 +1,20 @@
 import { render } from '@testing-library/react';
 import React, { useEffect } from 'react';
-import { useTranslation } from '../';
+import { Locale, useTranslation } from '../';
 
 type MockComponentProps = {
-  lang?: string;
+  lang?: Locale;
 };
 
 function MockComponent({ lang = 'en' }: MockComponentProps) {
-  const { t, i18n } = useTranslation();
+  const { t, changeLanguage } = useTranslation();
   useEffect(() => {
     async function setLanguage() {
-      await i18n.changeLanguage(lang);
+      await changeLanguage(lang);
     }
 
     void setLanguage();
-  }, [i18n, lang]);
+  }, [changeLanguage, lang]);
   return <div>{t('title')}</div>;
 }
 

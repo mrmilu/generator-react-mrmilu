@@ -5,7 +5,7 @@ import './i18n.config';
 import type { Resources } from './i18n.resources';
 import type { locales } from './locale';
 
-type Locale = keyof typeof locales;
+export type Locale = keyof typeof locales;
 
 /**
  * Hook to translate text in react components
