@@ -18,7 +18,7 @@ describe('Generator', () => {
         });
     });
     it('Run test', (done) => {
-      exec('yarn test', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout, stderr) => {
+      exec('yarn test', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
         expect(error).toBeNull();
         expect(stdout).not.toBeNull();
         done();
