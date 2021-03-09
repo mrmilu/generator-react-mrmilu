@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.4.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.2...v1.4.0) (2021-03-09)
+
+
+### Bug Fixes
+
+* **esbuild:** update esbuild (pending for fix in rollup-plugin-esbuild) ([8c2fb06](https://github.com/mrmilu/generator-react-mrmilu/commit/8c2fb069aab023fd8bf46003be1041dc62660ed2))
+
+
+### Features
+
+* add testing ([71459fb](https://github.com/mrmilu/generator-react-mrmilu/commit/71459fbdbbf83727dca0ec028eecb05d65287e8f))
+
 ## [1.3.2](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.1...v1.3.2) (2021-03-05)
 
 
