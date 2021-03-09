@@ -7,7 +7,8 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
-  testMatch: ['**/*.(spec|test).(ts|tsx)', '**/__tests__/*.(ts|tsx)', '!/build/', '!/dist/'],
+  modulePathIgnorePatterns: ['<rootDir>/app/templates/', '<rootDir>/tests/apps/', '/build/', '/dist/'],
+  testMatch: ['**/*.(spec|test).(ts|tsx)', '**/__tests__/*.(ts|tsx)'],
   testURL: 'http://localhost/',
   collectCoverage: false,
   coverageDirectory: './coverage/',
