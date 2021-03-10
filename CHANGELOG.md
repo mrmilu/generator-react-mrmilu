@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.0...v1.4.1) (2021-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([31dbf98](https://github.com/mrmilu/generator-react-mrmilu/commit/31dbf98822d7201e1041e1bdac2610d5f408b059))
+
 # [1.4.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.3.2...v1.4.0) (2021-03-09)
 
 
