@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.2...v1.4.3) (2021-03-10)
+
+
+### Bug Fixes
+
+* update recoil sample ([eb7b014](https://github.com/mrmilu/generator-react-mrmilu/commit/eb7b01426e6c7e17bcacc6ed413469710f75fe47))
+
 ## [1.4.2](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.1...v1.4.2) (2021-03-10)
 
 
