@@ -9065,10 +9065,10 @@ rollup-plugin-auto-external@2.0.0:
     safe-resolve "^1.0.0"
     semver "^5.5.0"
 
-rollup-plugin-esbuild@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-2.6.1.tgz#5785532940d49adf1bff5b38e9bd9089262d4e7a"
-  integrity sha512-hskMEQQ4Vxlyoeg1OWlFTwWHIhpNaw6q+diOT7p9pdkk34m9Mbk3aymS/JbTqLXy/AbJi22iuXrucknKpeczfg==
+rollup-plugin-esbuild@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-3.0.0.tgz#271d0a5bae8c12a3a74ec1797884030517f5cc05"
+  integrity sha512-Yeg74feF0LL6VSbSgMjP1Fob4LIHQp2h3SFi2RkRBqKr8oavIuBiDpSTcydSENwdrkQb7Er9jppSYQl8mSqC7A==
   dependencies:
     "@rollup/pluginutils" "^4.1.0"
     joycon "^2.2.5"

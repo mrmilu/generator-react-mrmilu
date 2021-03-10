@@ -64,7 +64,7 @@
     "rimraf": "3.0.2",
     "rollup": "2.41.0",
     "rollup-plugin-auto-external": "2.0.0",
-    "rollup-plugin-esbuild": "2.6.1",
+    "rollup-plugin-esbuild": "3.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-node-globals": "1.4.0",
     "semantic-release": "17.4.1",
