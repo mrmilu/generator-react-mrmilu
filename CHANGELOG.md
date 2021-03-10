@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.5.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.3...v1.5.0) (2021-03-10)
+
+
+### Features
+
+* add storybook ([705893c](https://github.com/mrmilu/generator-react-mrmilu/commit/705893c4448f61ec598fd9eff636b53e9dd55ba3))
+
 ## [1.4.3](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.2...v1.4.3) (2021-03-10)
 
 
