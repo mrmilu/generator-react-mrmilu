@@ -7,12 +7,26 @@ import { AppContainer, AppHeaderContainer } from './app.styles';
 <%_ } else { -%>
 import './app.styles.scss';
 <%_ } -%>
-import Title from './components/title/title.component';
-import AccountsList from './components/accounts/accounts-list.component';
+import Title from './common/view/components/title/title.component';
+import AccountsList from './accounts/view/components/accounts-list.component';
+import Button from './common/view/components/button/button.component';
 import { useTranslation } from './i18n';
+<%_ if (hasRedux) { -%>
+import { useReduxSampleName } from './accounts/view/store/sample.hooks';
+<%_ } -%>
+<%_ if (hasRecoil) { -%>
+import { useRecoilState } from 'recoil';
+import { sampleName } from './accounts/view/store/sample.atom';
+<%_ } -%>
 
 function App() {
   const { t, changeLanguage, activeLanguage, languages } = useTranslation();
+  <%_ if (hasRedux) { -%>
+  const [name, setName] = useReduxSampleName();
+  <%_ } -%>
+  <%_ if (hasRecoil) { -%>
+  const [name, setName] = useRecoilState(sampleName);
+  <%_ } -%>
 
   const handleChange = useCallback(
     (lang: string) => {
@@ -37,6 +51,8 @@ function App() {
         <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
         <AccountsList />
+          {name}
+          <Button onClick={() => setName('clicked!')}>Test button</Button>
 <%_ if (hasStyledComponents) { -%>
       </AppHeaderContainer>
     </AppContainer>
