@@ -33,6 +33,10 @@
     "target": "ES5",
     "importsNotUsedAsValues": "error"
   },
+  "include": [
+    "src",
+    "tests"
+  ],
   "exclude": [
     "node_modules"
   ]

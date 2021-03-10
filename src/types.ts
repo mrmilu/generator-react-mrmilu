@@ -1,4 +1,4 @@
-import Generator from 'yeoman-generator';
+import type Generator from 'yeoman-generator';
 
 export type ConfigOptions = {
   projectName: string;
@@ -10,6 +10,7 @@ export type ConfigOptions = {
   hasMobx: boolean;
   hasAxios: boolean;
   hasApollo: boolean;
+  update: boolean;
 };
 
 export type CmdAction = {
@@ -28,5 +29,5 @@ export type ConfigAnswers = {
 export type Config = {
   questions: (opts: ConfigOptions) => Generator.Question<ConfigAnswers>[];
   exclude: RegExp[];
-  endCmd: (opts?: ConfigOptions) => (false | CmdAction)[];
+  endCmd: (opts: ConfigOptions) => (false | CmdAction)[];
 };

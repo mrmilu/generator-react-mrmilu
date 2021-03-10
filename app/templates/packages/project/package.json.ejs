@@ -38,7 +38,7 @@
 <%_ if (hasRedux) { -%>
     "@reduxjs/toolkit": "1.5.0",
 <%_ } -%>
-    "@sentry/react": "6.2.0",
+    "@sentry/react": "6.2.1",
 <%_ if (hasAxios) { -%>
     "axios": "0.21.1",
 <%_ } -%>
@@ -52,8 +52,7 @@
     "recoil": "0.1.2",
 <%_ } -%>
 <%_ if (hasStyledComponents) { -%>
-    "styled-components": "5.2.1",
-    "twin.macro": "2.2.3"
+    "styled-components": "5.2.1"
 <%_ } -%>
   },
   "devDependencies": {
@@ -63,9 +62,9 @@
     "@snowpack/plugin-typescript": "1.2.1",
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
-    "@testing-library/react-hooks": "5.0.3",
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.1",
+    "@testing-library/react-hooks": "5.1.0",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.2",
 <%_ if (hasRedux) { -%>
     "@types/react-redux": "7.1.16",
 <%_ } -%>
@@ -78,18 +77,19 @@
 <%_ } -%>
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "i18next": "19.9.0",
+    "i18next": "19.9.2",
     "jest-styled-components": "7.0.3",
     "live-server": "1.2.1",
-    "postcss": "8.2.6",
+    "postcss": "8.2.8",
     "postcss-cli": "8.3.1",
     "postcss-import": "14.0.0",
     "postcss-preset-env": "6.7.0",
-    "react-i18next": "11.8.8",
+    "react-i18next": "11.8.9",
     "snowpack": "3.0.13",
 <%_ if (hasTailwind) { -%>
     "tailwindcss": "2.0.3",
-    "tailwindcss-elevation": "1.0.1"
+    "tailwindcss-elevation": "1.0.1",
+    "twin.macro": "2.3.0"
 <%_ } -%>
   }
 }

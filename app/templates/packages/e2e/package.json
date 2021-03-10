@@ -25,11 +25,11 @@
     "cypress-jest-adapter": "0.1.1",
     "cypress-plugin-snapshots": "1.4.4",
     "dotenv": "8.2.0",
-    "esbuild": "0.8.56",
+    "esbuild": "0.9.0",
     "esbuild-loader": "2.9.2",
     "eslint-plugin-cypress": "2.11.2",
     "path-browserify": "1.0.1",
     "stream-browserify": "3.0.0",
-    "webpack": "5.24.3"
+    "webpack": "5.24.4"
   }
 }
