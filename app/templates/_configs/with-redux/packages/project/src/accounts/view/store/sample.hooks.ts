@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '../store';
+import { useAppDispatch } from '../../store';
 import { selectSample, selectName } from './sample.selectors';
 import { sampleStore } from './sample.slice';
 import type { SampleState } from './sample.types';

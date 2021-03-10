@@ -36,7 +36,7 @@ const config: Config = {
       {
         type: 'list',
         name: 'state',
-        message: 'Choose technology for state manager',
+        message: 'Choose technology for accounts manager',
         choices: [
           { value: 'redux', name: 'Redux toolkit' },
           { value: 'recoil', name: 'Recoil' },

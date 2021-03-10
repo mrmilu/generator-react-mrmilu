@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import sample from './sample/sample.slice';
+import sample from './view/store/sample.slice';
 
 const store = configureStore({
   reducer: {
