@@ -32,6 +32,13 @@ describe('Generator', () => {
         done();
       });
     });
+    it('Run storybook build', (done) => {
+      exec('yarn project storybook', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
+        expect(error).toBeNull();
+        expect(stdout).not.toBeNull();
+        done();
+      });
+    });
   });
   describe('Recoil generator', () => {
     let runResult: RunResult;
@@ -59,6 +66,13 @@ describe('Generator', () => {
     });
     it('Run test', (done) => {
       exec('yarn test', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
+        expect(error).toBeNull();
+        expect(stdout).not.toBeNull();
+        done();
+      });
+    });
+    it('Run storybook build', (done) => {
+      exec('yarn project storybook', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
         expect(error).toBeNull();
         expect(stdout).not.toBeNull();
         done();
