@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { atom, DefaultValue, selector } from 'recoil';
 import type { SampleState } from './sample.types';
 
 export const INITIAL_STATE: SampleState = {
@@ -11,7 +11,7 @@ export const sampleState = atom({
   default: INITIAL_STATE
 });
 
-export const sampleName = selector({
+export const sampleName = selector<string>({
   key: 'sampleName',
   get: ({ get }) => {
     const sample = get(sampleState);
@@ -19,6 +19,7 @@ export const sampleName = selector({
   },
   set: ({ set, get }, newValue) => {
     const sample = get(sampleState);
-    set(sampleState, { ...sample, sampleName: newValue });
+    const newState = newValue instanceof DefaultValue ? newValue : { ...sample, sampleName: newValue };
+    set(sampleState, newState);
   }
 });
