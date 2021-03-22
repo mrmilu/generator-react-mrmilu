@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.5.0...v1.5.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* **postinstall:** remove postinstall ([f59ea86](https://github.com/mrmilu/generator-react-mrmilu/commit/f59ea860659a3a017924cbd67d0027036069b248))
+
 # [1.5.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.4.3...v1.5.0) (2021-03-10)
 
 
