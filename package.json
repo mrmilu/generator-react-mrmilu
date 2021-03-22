@@ -23,8 +23,7 @@
     "clean:root": "rm -fr node_modules",
     "ci": "yarn clean:root && yarn",
     "semantic-release": "semantic-release",
-    "postversion": "git commit -am 'chore(bump): bump version [skip-ci]' && git push --follow-tags",
-    "postinstall": "patch-package"
+    "postversion": "git commit -am 'chore(bump): bump version [skip-ci]' && git push --follow-tags"
   },
   "dependencies": {
     "glob": "7.1.6",
