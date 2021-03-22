@@ -33,3 +33,4 @@ yo react-mrmilu sample-project
 - Cypress
 - Eslint + prettier + stylelint
 - Githooks (husky)
+- Storybook

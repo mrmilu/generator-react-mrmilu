@@ -1,8 +1,10 @@
 /.history
 /.idea
 node_modules
-/dist
-/build
-/coverage
-/src/assets/tailwind.parsed.css
+dist/
+build/
+coverage/
+tailwind.parsed.css
 .env
+.jest-test-results.json
+storybook/
