@@ -1,5 +1,5 @@
 import React from 'react';
-import { customRender } from '../../../../tests/test-utils';
+import { customRender } from '../../../../../../tests/test-utils';
 import Title from '../title.component';
 
 describe('Title', () => {

@@ -1,4 +1,4 @@
-import type { Support } from "../../data/accounts.types";
+import type { Support } from "./accounts.types";
 import type { Page } from '../../../common/domain/models/page.type';
 
 export interface AccountsListData {

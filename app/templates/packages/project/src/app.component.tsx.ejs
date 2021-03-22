@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { appRoutes } from './common/view/router/routes';
 import { RouteWithSubRoutes } from './common/view/router/config';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
@@ -51,7 +52,11 @@ function App() {
         </select>
         <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
-        {appRoutes.map((route, idx) => (<RouteWithSubRoutes key={idx} {...route} />)) }
+        <Router>
+          <Switch>
+            {appRoutes.map((route, idx) => (<RouteWithSubRoutes key={idx} {...route} />)) }
+          </Switch>
+        </Router>
           {name}
           <Button onClick={() => setName('clicked!')}>Test button</Button>
 <%_ if (hasStyledComponents) { -%>

@@ -17,13 +17,13 @@ export function parseUrl(url: string, params: Record<string, string | number>) {
 class HttpClient {
   instance: AxiosInstance;
 
-  constructor (auth = true) {
+  constructor(auth = true) {
     const headers: DmHeaders = {};
     if (!auth && window.localStorage.getItem('token')) {
-      auth = window.localStorage.getItem('token') || '';
-    }
-    if (auth) {
-      headers['authorization'] = auth;
+      const token = window.localStorage.getItem('token') || '';
+      if (token) {
+        headers['authorization'] = token;
+      }
     }
 
     this.instance = axios.create({
@@ -34,4 +34,4 @@ class HttpClient {
   }
 }
 
-export default new HttpClient()
+export default new HttpClient();

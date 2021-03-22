@@ -1,4 +1,4 @@
-import type { Support } from '../../data/accounts.types';
+import type { Support } from './accounts.types';
 
 export interface AccountsGetData {
   id: number;

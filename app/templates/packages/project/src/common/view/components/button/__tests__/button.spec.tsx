@@ -1,5 +1,5 @@
 import React from 'react';
-import { customRender, mockComponent } from '../../../../tests/test-utils';
+import { customRender, mockComponent } from '../../../../../../tests/test-utils';
 import Button from '../button.component';
 
 jest.mock('../../title/title.component', () => mockComponent('Title'));
