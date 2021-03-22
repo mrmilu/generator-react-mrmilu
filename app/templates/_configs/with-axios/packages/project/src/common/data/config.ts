@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import type { DmHeaders } from './types';
-import { ConfigEnv } from './config.env';
+import { ConfigEnv } from '../config.env';
 
 const EIGHT_SECONDS = 8_000;
 

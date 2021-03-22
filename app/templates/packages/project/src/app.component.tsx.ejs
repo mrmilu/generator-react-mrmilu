@@ -1,4 +1,6 @@
 import React, { useCallback } from 'react';
+import { appRoutes } from './common/view/router/routes';
+import { RouteWithSubRoutes } from './common/view/router/config';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
@@ -8,7 +10,6 @@ import { AppContainer, AppHeaderContainer } from './app.styles';
 import './app.styles.scss';
 <%_ } -%>
 import Title from './common/view/components/title/title.component';
-import AccountsList from './accounts/view/components/accounts-list.component';
 import Button from './common/view/components/button/button.component';
 import { useTranslation } from './i18n';
 <%_ if (hasRedux) { -%>
@@ -50,7 +51,7 @@ function App() {
         </select>
         <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
-        <AccountsList />
+        {appRoutes.map((route, idx) => (<RouteWithSubRoutes key={idx} {...route} />)) }
           {name}
           <Button onClick={() => setName('clicked!')}>Test button</Button>
 <%_ if (hasStyledComponents) { -%>
