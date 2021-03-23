@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh';
-<%_ if (hasStyledComponents) { -%>
+<%_ if (hasTailwind) { -%>
 import macrosPlugin from 'vite-plugin-babel-macros';
 <%_ } -%>
 
@@ -8,7 +8,7 @@ import macrosPlugin from 'vite-plugin-babel-macros';
 export default defineConfig({
   plugins: [
     reactRefresh(),
-<%_ if (hasStyledComponents) { -%>
+<%_ if (hasTailwind) { -%>
     macrosPlugin()
 <%_ } -%>
   ]
