@@ -3,7 +3,6 @@
 exports[`Button Render 1`] = `
 <div>
   <button>
-    sample item
     <div
       data-mocked-component="Title"
     >

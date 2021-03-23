@@ -35,7 +35,8 @@ const AccountsForm = () => {
         initialValues={initialValues}
         validationSchema={formSchema}
         onSubmit={(values) => {
-          console.log(values);
+          // eslint-disable-next-line no-console
+          console.log('Submit formik', values);
         }}>
         {({ values, handleChange, errors, touched }: FormikProps<FormValues>) => (
           <Form>

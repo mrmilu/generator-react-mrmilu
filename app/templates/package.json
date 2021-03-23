@@ -16,7 +16,7 @@
     "lint:packages": "yarn lerna:run lint",
     "lint:root": "eslint --ext .js,.jsx,.ts,.tsx packages/",
     "lint:stage": "eslint --fix",
-    "stylelint": "stylelint \"**/*.{css,scss,sass}\" \"!**/tailwind.css\"",
+    "stylelint": "stylelint \"**/*.{css,scss,sass}\" \"!dist/**\" \"!**/tailwind.parsed.css\" \"!**/tailwind.css\"",
     "stylelint:fix": "yarn stylelint --fix",
     "stylelint:stage": "stylelint --fix",
     "post:patch": "patch-package",
@@ -108,10 +108,10 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx}|!node_modules": [
+    "*.{ts,tsx}|!dist|!node_modules": [
       "yarn lint:stage"
     ],
-    "*.{css,scss}|!node_modules": [
+    "*.{css,scss}|*/tailwindcss.parsed.css|!dist|!node_modules": [
       "yarn stylelint:stage"
     ]
   }

@@ -2,11 +2,11 @@ import * as yup from 'yup';
 import type { AnyObject, Maybe } from 'yup/lib/types';
 
 yup.addMethod<yup.StringSchema>(yup.string, 'emptyAsUndefined', function () {
-  return this.transform((value) => (value ? value : undefined));
+  return this.transform((value?: string) => (value ? value : undefined));
 });
 
 yup.addMethod<yup.NumberSchema>(yup.number, 'emptyAsUndefined', function () {
-  return this.transform((value, originalValue) => (String(originalValue)?.trim() ? value : undefined));
+  return this.transform((value: string, originalValue?: string) => (originalValue?.trim() ? value : undefined));
 });
 
 declare module 'yup' {
