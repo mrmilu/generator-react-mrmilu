@@ -28,7 +28,7 @@
   "dependencies": {
     "glob": "7.1.6",
     "mkdirp": "1.0.4",
-    "yeoman-generator": "5.2.0"
+    "yeoman-generator": "4.13.0"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
