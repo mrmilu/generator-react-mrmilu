@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "watch": "run-s clean:build start:dev",
-    "preview": "run-s clean:build start:preview",
+    "preview": "run-s start:preview",
     "build:code": "run-s translate vite:build",
 <%_ if (hasTailwind) { -%>
     "start:dev": "run-s translate build:css vite:dev",

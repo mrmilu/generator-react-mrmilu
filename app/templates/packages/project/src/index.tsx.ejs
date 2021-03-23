@@ -15,7 +15,6 @@ import './index.scss';
 import './assets/tailwind.parsed.css';
 <%_ } -%>
 import { ConfigEnv } from './common/config.env';
-import { HashRouter } from 'react-router-dom';
 
 Sentry.init({
   dsn: ConfigEnv.SENTRY_URL,
@@ -31,9 +30,7 @@ ReactDOM.render(
 <%_ if (hasRecoil) { -%>
       <RecoilRoot>
 <%_ } -%>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <App />
 <%_ if (hasRedux) { -%>
       </Provider>
 <%_ } -%>

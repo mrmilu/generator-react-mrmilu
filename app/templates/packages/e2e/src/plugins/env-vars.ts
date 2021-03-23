@@ -3,12 +3,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const envBase = path.resolve(__dirname, '../../../../env');
+const envBase = path.resolve(__dirname, '../../../project');
 const envCypress = path.resolve(__dirname, '../../env');
 
 const environmentsConfig = {
-  local: [path.join(envBase, 'local.env'), path.join(envCypress, 'local.env')],
-  dev: [path.join(envBase, 'development.env'), path.join(envCypress, 'development.env')],
+  local: [path.join(envBase, '.env.local'), path.join(envCypress, '.env.local')],
+  dev: [path.join(envBase, '.env.development'), path.join(envCypress, '.env.development')],
   prod: [path.join(envBase, 'production.env'), path.join(envCypress, 'production.env')]
 };
 

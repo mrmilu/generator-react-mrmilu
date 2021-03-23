@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react';
 import { appRoutes } from './common/view/router/routes';
 import { RouteWithSubRoutes } from './common/view/router/config';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { HashRouter as Router, Switch, Redirect } from 'react-router-dom';
+import accountRoutes from './accounts/view/router/routes';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
@@ -53,9 +54,13 @@ function App() {
         <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
         <Router>
-          <Switch>
-            {appRoutes.map((route, idx) => (<RouteWithSubRoutes key={idx} {...route} />)) }
-          </Switch>
+          {/*This redirect here is needed only if your root page on load is a different route*/}
+          <Redirect exact push from="/" to={accountRoutes[0].path}/>
+            <Switch>
+              {appRoutes.map((route, idx) => (
+              <RouteWithSubRoutes key={idx} {...route} />
+              ))}
+            </Switch>
         </Router>
           {name}
           <Button onClick={() => setName('clicked!')}>Test button</Button>

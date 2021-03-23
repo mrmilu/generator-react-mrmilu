@@ -25,7 +25,7 @@ export const RouteWithSubRoutes = (route: Props) => {
     if (typeof result === 'boolean' && result && route.component) {
       return <route.component {...props} routes={route.routes} />;
     } else if (typeof result === 'string') {
-      return <Redirect to={result} />;
+      return <Redirect exact push from={route.path} to={result} />;
     } else {
       return <Redirect to="/" />;
     }
@@ -34,11 +34,11 @@ export const RouteWithSubRoutes = (route: Props) => {
   return (
     <Route
       path={route.path}
-      // exact={Boolean(route.exact)}
+      exact={Boolean(route.exact)}
       render={(props) => {
         switch (true) {
           case Boolean(route.redirect):
-            return <Redirect to={route.redirect ?? '/'} />;
+            return <Redirect exact push from={route.path} to={route.redirect ?? '/'} />;
           case Boolean(route.guard):
             return routeGuard(props);
           default:

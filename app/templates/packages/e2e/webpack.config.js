@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     new ESBuildPlugin(),
     new webpack.DefinePlugin(
-      Object.keys(require('dotenv').config({ path: path.resolve(__dirname, '../../env/development.env') }).parsed).reduce((a, key) => ({
+      Object.keys(require('dotenv').config({ path: path.resolve(__dirname, '../project/.env.development') }).parsed).reduce((a, key) => ({
         ...a,
         [`process.env.${key}`]: JSON.stringify(process.env[key.toString()])
       }))
