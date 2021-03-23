@@ -1,9 +1,9 @@
-import accountRoutes from '../../../accounts/view/router/routes'
+import accountRoutes from '../../../accounts/view/router/routes';
 
 export const appRoutes = [
   {
-    path: "/",
-    redirect: "/accounts"
+    path: '/',
+    redirect: '/accounts'
   },
   ...accountRoutes
-]
+];

@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react';
-import { Route, Redirect, RouteChildrenProps, RouteComponentProps } from 'react-router-dom';
-import * as H from 'history';
+import { Redirect, Route, RouteChildrenProps, RouteComponentProps } from 'react-router-dom';
+import type * as H from 'history';
 
 export type RouteGuard = { execute: (route: AppRoute, location: H.Location<any>, query: URLSearchParams) => boolean | string };
 export type AppRoute = {

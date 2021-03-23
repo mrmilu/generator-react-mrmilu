@@ -58,10 +58,10 @@ const config: Config = {
   },
   exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
   endCmd: (opts) => [
+    { command: 'git', args: ['init'] },
     { command: 'yarn', args: ['install'] },
     { command: 'yarn', args: ['lint:fix'] },
     opts.update && { command: 'yarn', args: ['update', '-u'] },
-    { command: 'git', args: ['init'] },
     { command: 'git', args: ['add', '.'] },
     { command: 'git', args: ['commit', '-m', '"chore: initial commit"'] },
     { command: 'yarn', args: ['install'] }
