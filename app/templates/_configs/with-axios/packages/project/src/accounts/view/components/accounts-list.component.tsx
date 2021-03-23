@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import type { AccountsListDataEntity } from '../../data/models/accounts-list.entity';
 import { AccountsRepository } from "../../data/accounts.repository";
-import { Link } from 'react-router-dom'
+import { Link, Switch } from 'react-router-dom';
+import { CustomRouteChildrenProps, RouteWithSubRoutes } from '../../../common/view/router/config';
 
-export type AccountsListProps = {
+export interface AccountsListProps extends CustomRouteChildrenProps {
   /**
    * Get a page
    */
   page?: number;
 };
 
-function AccountsList({ page = 1 }: AccountsListProps) {
+function AccountsList({ page = 1, routes }: AccountsListProps) {
   const [list, setList] = useState<AccountsListDataEntity[]>([]);
 
   useEffect(() => {
@@ -28,7 +29,17 @@ function AccountsList({ page = 1 }: AccountsListProps) {
           </li>
         ))}
       </ul>
+      <Link to="/accounts/create">Go to accounts form (formik + yup)</Link>
       <Link to="/accounts-redirect">Go to redirect route</Link>
+      <br/>
+      <hr/>
+      <Switch>
+        {routes.map((route, idx) => (
+          <RouteWithSubRoutes key={idx} {...route} />
+        ))}
+      </Switch>
+      <br/>
+      <hr/>
     </>
   );
 }

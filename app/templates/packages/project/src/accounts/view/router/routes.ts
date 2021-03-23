@@ -1,10 +1,17 @@
-import AccountsList from '../../view/components/accounts-list.component';
+import AccountsList from '../components/accounts-list.component';
+import AccountsForm from '../components/accounts-form.component';
 import type { AppRoute } from '../../../common/view/router/config';
 
 const routes: AppRoute[] = [
   {
     path: '/accounts',
-    component: AccountsList
+    component: AccountsList,
+    routes: [
+      {
+        path: '/accounts/create',
+        component: AccountsForm
+      }
+    ]
   },
   {
     path: '/accounts-redirect',
