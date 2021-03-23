@@ -67,6 +67,9 @@ module.exports = {
         loader: 'html-loader'
       }
     });
-    return config;
+    return {
+      ...config,
+      plugins: config.plugins.filter(plugin => plugin.constructor.name !== 'ESLintWebpackPlugin')
+    };
   }
 };
