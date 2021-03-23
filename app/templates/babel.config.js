@@ -1,5 +1,5 @@
 const path = require('path');
-const config = require('./packages/project/babel.config');
+const config = require('./packages/project/.babelrc');
 
 config.babelrcRoots = ['.', path.resolve(__dirname, './packages/')];
 
