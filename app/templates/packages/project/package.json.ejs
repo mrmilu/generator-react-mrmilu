@@ -6,17 +6,15 @@
   "author": "Mr Milú",
   "license": "ISC",
   "scripts": {
-    "watch": "run-s clean:build start:dev",
-    "preview": "run-s clean:build start:preview",
+    "watch": "run-s start:dev",
+    "preview": "yarn vite:preview",
     "build:code": "run-s translate vite:build",
 <%_ if (hasTailwind) { -%>
     "start:dev": "run-s translate build:css vite:dev",
-    "start:preview": "run-s translate build:css vite:preview",
-    "build:css": "postcss tailwind.css -o src/assets/tailwind.parsed.css && sleep 2",
+    "build:css": "postcss tailwind.css -o src/assets/tailwind.parsed.css",
     "build": "run-s clean:build build:css build:code",
 <%_ } else { -%>
     "start:dev": "run-s translate vite:dev",
-    "start:preview": "run-s translate vite:preview",
     "build": "run-s clean:build build:code",
 <%_ } -%>
     "translate": "ts-node -P tsconfig.run.json scripts/transform.ts",
@@ -27,7 +25,7 @@
     "test": "jest --json --outputFile=src/stories/.jest-test-results.json",
     "test:coverage": "yarn test --coverage",
     "vite:preview": "vite preview",
-    "vite:dev": "vite dev",
+    "vite:dev": "vite .",
     "vite:build": "vite build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:fix": "yarn lint --fix",
