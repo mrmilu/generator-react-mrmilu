@@ -3,7 +3,7 @@ import { render as rtlRender, RenderOptions } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
 <%_ if (hasRedux) { -%>
 import { Provider } from 'react-redux';
-import store from '../src/state/store';
+import store from '../src/common/view/store/store';
 <%_ } -%>
 <%_ if (hasRecoil) { -%>
 import { RecoilRoot } from 'recoil';

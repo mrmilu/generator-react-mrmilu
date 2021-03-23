@@ -32,7 +32,7 @@ describe('Generator', () => {
         done();
       });
     });
-    it('Run storybook build', (done) => {
+    xit('Run storybook build', (done) => {
       exec('yarn project storybook', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
         expect(error).toBeNull();
         expect(stdout).not.toBeNull();
@@ -71,7 +71,7 @@ describe('Generator', () => {
         done();
       });
     });
-    it('Run storybook build', (done) => {
+    xit('Run storybook build', (done) => {
       exec('yarn project storybook', { cwd: path.resolve(runResult.cwd, projectName) }, (error, stdout) => {
         expect(error).toBeNull();
         expect(stdout).not.toBeNull();

@@ -36,7 +36,7 @@ const config: Config = {
       {
         type: 'list',
         name: 'state',
-        message: 'Choose technology for state manager',
+        message: 'Choose technology for accounts manager',
         choices: [
           { value: 'redux', name: 'Redux toolkit' },
           { value: 'recoil', name: 'Recoil' },
@@ -58,10 +58,10 @@ const config: Config = {
   },
   exclude: [/^node_modules/, /^yarn.lock$/, /^_configs/],
   endCmd: (opts) => [
+    { command: 'git', args: ['init'] },
     { command: 'yarn', args: ['install'] },
     { command: 'yarn', args: ['lint:fix'] },
     opts.update && { command: 'yarn', args: ['update', '-u'] },
-    { command: 'git', args: ['init'] },
     { command: 'git', args: ['add', '.'] },
     { command: 'git', args: ['commit', '-m', '"chore: initial commit"'] },
     { command: 'yarn', args: ['install'] }

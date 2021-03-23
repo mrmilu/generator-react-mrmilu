@@ -1,5 +1,6 @@
 node_modules
-/coverage/
-dist/
-build/
-docs/
+/coverage/*
+dist/*
+build/*
+docs/*
+*/tailwind.parsed.css

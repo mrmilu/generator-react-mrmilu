@@ -30,7 +30,7 @@ const plugins = {
   resolve: nodeResolve(resolveOptions),
   typescript: esbuild({
     minify: isProd,
-    target: ['es2015', 'chrome50', 'edge18', 'firefox53'],
+    target: ['es2020'],
     sourceMap: !isProd,
     loaders: {
       '.ts': 'ts',
