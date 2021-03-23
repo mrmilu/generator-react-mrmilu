@@ -98,7 +98,7 @@ const AccountsForm = () => {
 
             <br />
             {/*Submit programmatically*/}
-            <button onClick={() => formikRef.current?.submitForm()}>Submit with ref</button>
+            <button type="button" onClick={() => formikRef.current?.submitForm()}>Submit with ref</button>
 
             <br />
           </Form>
