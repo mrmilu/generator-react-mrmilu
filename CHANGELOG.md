@@ -1,5 +1,29 @@
 # Changelog
 
+# [1.6.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.5.1...v1.6.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* added snapshot for input test ([18afb18](https://github.com/mrmilu/generator-react-mrmilu/commit/18afb18d4686351ddb58f010647b35784e25e8c5))
+* added type button to submit button with ref in formik example ([345d1b5](https://github.com/mrmilu/generator-react-mrmilu/commit/345d1b5debc369d79e0b69f6559414e263bbd69d))
+* build modifications ([71f47ca](https://github.com/mrmilu/generator-react-mrmilu/commit/71f47caaeef2628f1966c00aea416343233cd380))
+* build without target ([73dfae1](https://github.com/mrmilu/generator-react-mrmilu/commit/73dfae19cf115d7c9a7643e8db09c8d239100194))
+* build/watch with vite macro plugin ([56ac57d](https://github.com/mrmilu/generator-react-mrmilu/commit/56ac57d60b303ae35f28759a810a8e290ace01d8))
+* bumped edge a version to see if fixes target destructuring error on build ([40eae24](https://github.com/mrmilu/generator-react-mrmilu/commit/40eae24c9adcb9b4d1093237bc458cecd4f28c5b))
+* fixed button import for story ([c4ca328](https://github.com/mrmilu/generator-react-mrmilu/commit/c4ca32808948c43e72c3f59a1543be468ec6c469))
+* moved button story to commons module ([84af88d](https://github.com/mrmilu/generator-react-mrmilu/commit/84af88d093cd851ea60c0469370e34bb3f35ff2a))
+* remove eslint from storybook ([be21da7](https://github.com/mrmilu/generator-react-mrmilu/commit/be21da748151440d8cc49054de25a31a07667797))
+* update react dependencies ([1d590f8](https://github.com/mrmilu/generator-react-mrmilu/commit/1d590f8b73bac46682f6be58d33e2f9f474f179f))
+* use babel-macros for tailwind ([fe0898f](https://github.com/mrmilu/generator-react-mrmilu/commit/fe0898f190ddbcbbe4094a8268490f0a9a54cb5e))
+* use vite ([7d984a9](https://github.com/mrmilu/generator-react-mrmilu/commit/7d984a9b6afe873c5b08cbc5ff473f75b6cea14e))
+* yeoman-generator dependency ([027d6d7](https://github.com/mrmilu/generator-react-mrmilu/commit/027d6d788a7a722b386419734f35a02da0ab94b3))
+
+
+### Features
+
+* Formik + yup and react router examples ([f827d72](https://github.com/mrmilu/generator-react-mrmilu/commit/f827d72bb81492c62c0b1f748cd3c5d26f1a3cf1))
+
 ## [1.5.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.5.0...v1.5.1) (2021-03-22)
 
 
