@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.6.0...v1.6.1) (2021-05-14)
+
+
+### Bug Fixes
+
+* fixed babel config for tests ([db4ec35](https://github.com/mrmilu/generator-react-mrmilu/commit/db4ec35f99ea768118a5c4ff34191755938e0309))
+
 # [1.6.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.5.1...v1.6.0) (2021-03-24)
 
 
