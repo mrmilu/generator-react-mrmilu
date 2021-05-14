@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import { appRoutes } from './common/view/router/routes';
 import { RouteWithSubRoutes } from './common/view/router/config';
-import { HashRouter as Router, Switch, Redirect } from 'react-router-dom';
-import accountRoutes from './accounts/view/router/routes';
+import { HashRouter as Router, Switch } from 'react-router-dom';
 <%_ if (hasTailwind) { -%>
 import 'twin.macro';
 <%_ } -%>
@@ -25,7 +24,7 @@ import { sampleName } from './accounts/view/store/sample.atom';
 function App() {
   const { t, changeLanguage, activeLanguage, languages } = useTranslation();
   <%_ if (hasRedux) { -%>
-  const [name, setName] = useReduxSampleName();
+  const [name, setName, setNameThunk] = useReduxSampleName();
   <%_ } -%>
   <%_ if (hasRecoil) { -%>
   const [name, setName] = useRecoilState(sampleName);
@@ -54,8 +53,6 @@ function App() {
         <p<%_ if (hasTailwind) { -%> tw="bg-green-200" <%_ } -%>>{t('title')}</p>
         <Title>Title component</Title>
         <Router>
-          {/*This redirect here is needed only if your root page on load is a different route*/}
-          <Redirect exact push from="/" to={accountRoutes[0].path}/>
             <Switch>
               {appRoutes.map((route, idx) => (
               <RouteWithSubRoutes key={idx} {...route} />
@@ -64,6 +61,8 @@ function App() {
         </Router>
           {name}
           <Button onClick={() => setName('clicked!')}>Test button</Button>
+          <br />
+          <Button onClick={() => setNameThunk('clicked! thunk')}>Test button (thunk)</Button>
 <%_ if (hasStyledComponents) { -%>
       </AppHeaderContainer>
     </AppContainer>
