@@ -8,6 +8,9 @@ import './config/recoil';
 <%_ if (hasRedux) { -%>
 import './config/redux';
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+import './config/mobx';
+<%_ } -%>
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
