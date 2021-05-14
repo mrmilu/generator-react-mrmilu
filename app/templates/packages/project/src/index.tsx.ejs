@@ -8,6 +8,9 @@ import store from './common/view/store/store';
 <%_ if (hasRecoil) { -%>
 import { RecoilRoot } from 'recoil';
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+import { RootStore, StoreContext } from './common/view/store/root.store';
+<%_ } -%>
 import App from './app.component';
 import './assets/reset.scss';
 import './index.scss';
@@ -30,12 +33,18 @@ ReactDOM.render(
 <%_ if (hasRecoil) { -%>
       <RecoilRoot>
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+      <StoreContext.Provider value={new RootStore()}>
+<%_ } -%>
       <App />
 <%_ if (hasRedux) { -%>
       </Provider>
 <%_ } -%>
 <%_ if (hasRecoil) { -%>
       </RecoilRoot>
+<%_ } -%>
+<%_ if (hasMobx) { -%>
+      </StoreContext.Provider>
 <%_ } -%>
     </React.StrictMode>
   </Sentry.ErrorBoundary>,
