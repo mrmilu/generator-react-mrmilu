@@ -40,7 +40,7 @@ const config: Config = {
         choices: [
           { value: 'redux', name: 'Redux toolkit' },
           { value: 'recoil', name: 'Recoil' },
-          { value: 'mobx', name: 'Mobx', disabled: true }
+          { value: 'mobx', name: 'Mobx' }
         ],
         default: defaultState
       },

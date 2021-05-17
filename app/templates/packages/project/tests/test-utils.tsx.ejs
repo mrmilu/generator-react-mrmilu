@@ -8,6 +8,9 @@ import store from '../src/common/view/store/store';
 <%_ if (hasRecoil) { -%>
 import { RecoilRoot } from 'recoil';
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+import { StoreContext, RootStore } from '../src/common/view/store/root.store';
+<%_ } -%>
 
 /**
  * Custom render to add possible store
@@ -26,8 +29,13 @@ export function customRender(ui: React.ReactElement | React.ReactNode, renderOpt
     return <RecoilRoot>{children}</RecoilRoot>;
   };
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+    const Wrapper = ({ children }: PropsWithChildren<unknown>) => {
+        return <StoreContext.Provider value={new RootStore()}>{children}</StoreContext.Provider>;
+    };
+<%_ } -%>
 
-<%_ if (hasRedux || hasRecoil) { -%>
+<%_ if (hasRedux || hasRecoil || hasMobx) { -%>
   return rtlRender(ui as React.ReactElement, { ...renderOptions, wrapper: Wrapper });
 <%_ } else { -%>
   return rtlRender(ui as React.ReactElement, { ...renderOptions });

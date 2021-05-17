@@ -1,4 +1,8 @@
+<%_ if (hasMobx) { -%>
+import React, { useCallback, useContext } from 'react';
+<%_ } else { -%>
 import React, { useCallback } from 'react';
+<%_ } -%>
 import { appRoutes } from './common/view/router/routes';
 import { RouteWithSubRoutes } from './common/view/router/config';
 import { HashRouter as Router, Switch } from 'react-router-dom';
@@ -20,6 +24,10 @@ import { useReduxSampleName } from './accounts/view/store/sample.hooks';
 import { useRecoilState } from 'recoil';
 import { sampleName } from './accounts/view/store/sample.atom';
 <%_ } -%>
+<%_ if (hasMobx) { -%>
+import { StoreContext } from './common/view/store/root.store';
+import { observer } from 'mobx-react';
+<%_ } -%>
 
 function App() {
   const { t, changeLanguage, activeLanguage, languages } = useTranslation();
@@ -28,6 +36,9 @@ function App() {
   <%_ } -%>
   <%_ if (hasRecoil) { -%>
   const [name, setName] = useRecoilState(sampleName);
+  <%_ } -%>
+  <%_ if (hasMobx) { -%>
+  const { sampleStore } = useContext(StoreContext);
   <%_ } -%>
 
   const handleChange = useCallback(
@@ -59,10 +70,17 @@ function App() {
               ))}
             </Switch>
         </Router>
+          <%_ if (hasMobx) { -%>
+          {sampleStore.sampleName}
+          <Button onClick={() => sampleStore.setSampleName('clicked!')}>Test button</Button>
+          <br />
+          <Button onClick={() => sampleStore.sampleAsyncAction('clicked! thunk')}>Test button (thunk)</Button>
+          <%_ } else { -%>
           {name}
           <Button onClick={() => setName('clicked!')}>Test button</Button>
           <br />
           <Button onClick={() => setNameThunk('clicked! thunk')}>Test button (thunk)</Button>
+          <%_ } -%>
 <%_ if (hasStyledComponents) { -%>
       </AppHeaderContainer>
     </AppContainer>
@@ -73,4 +91,8 @@ function App() {
   );
 }
 
+<%_ if (hasMobx) { -%>
+export default React.memo(observer(App));
+<%_ } else { -%>
 export default React.memo(App);
+<%_ } -%>
