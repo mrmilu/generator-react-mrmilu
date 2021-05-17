@@ -1,5 +1,5 @@
 import React from 'react';
-import { RootStore, StoreContext } from './common/view/store/root.store';
+import { RootStore, StoreContext } from '../../src/common/view/store/root.store';
 import { addDecorator } from '@storybook/react';
 
 addDecorator(
