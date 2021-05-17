@@ -1,5 +1,19 @@
 # Changelog
 
+# [1.7.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.6.1...v1.7.0) (2021-05-17)
+
+
+### Bug Fixes
+
+* added missing mobx config for storybook ([b823c58](https://github.com/mrmilu/generator-react-mrmilu/commit/b823c5843d66de7e9ddedbcaf9f3d0da94d0df3e))
+* fixed store context in mobx storybook config ([3751457](https://github.com/mrmilu/generator-react-mrmilu/commit/37514577b156964f13eac69ef4f48362d729ef5c))
+* removing nested double quotes because initial commit was not generating ([2bb8289](https://github.com/mrmilu/generator-react-mrmilu/commit/2bb8289961e5838451e0c31b397576af848fd19b))
+
+
+### Features
+
+* added mobx template ([379e970](https://github.com/mrmilu/generator-react-mrmilu/commit/379e9705db5e55b3d57067bfe9c883cc55511c06))
+
 ## [1.6.1](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.6.0...v1.6.1) (2021-05-14)
 
 
