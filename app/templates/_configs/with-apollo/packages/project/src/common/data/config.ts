@@ -21,8 +21,8 @@ class HttpClient {
     });
   }
 
-  async query<T>(queryNode: DocumentNode): Promise<T> {
-    const { data, errors, error } = await this.instance.query<T>({ query: queryNode });
+  async query<T>(queryNode: DocumentNode, variables?: Record<string, any>): Promise<T> {
+    const { data, errors, error } = await this.instance.query<T>({ query: queryNode, variables });
     if (errors?.length) {
       return Promise.reject(errors);
     }
@@ -30,6 +30,14 @@ class HttpClient {
       return Promise.reject(error);
     }
     return data;
+  }
+
+  async mutate<T>(mutationNode: DocumentNode, variables?: Record<string, any>): Promise<T | null> {
+    const { data, errors } = await this.instance.mutate<T>({ mutation: mutationNode, variables });
+    if (errors?.length) {
+      return Promise.reject(errors);
+    }
+    return data === undefined ? null : data;
   }
 }
 
