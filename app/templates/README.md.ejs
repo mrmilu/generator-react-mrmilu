@@ -4,6 +4,14 @@ This repository is a mono repository, this means that there are multiple package
 
 All packages are located inside folder `packages` and every package have a **package.json** file that defines the pkg itself
 
+<%_ if (hasApollo) { -%>
+## Graphql
+First you need to download your schema and update your query types. To do so run the following command:
+```bash
+yarn graphql:build
+```
+<%_ } -%>
+
 ## Development
 
 To start development use:
