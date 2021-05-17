@@ -86,6 +86,8 @@ export default class GeneratorComponent extends Generator {
       this._copyFiles('with-redux');
     } else if (this.hasRecoil) {
       this._copyFiles('with-recoil');
+    } else if (this.hasMobx) {
+      this._copyFiles('with-mobx');
     }
 
     if (this.hasAxios) {
