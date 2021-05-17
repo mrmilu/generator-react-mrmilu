@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
 
-// IMPORTANT: Add environment variables in env/.env.development.ejs file or add process.env variables in snowpack.config.js
+// IMPORTANT: Add environment variables in env/.env.development file or add process.env variables in snowpack.config.js
 
 export class ConfigEnv {
   static IS_DEV = import.meta.env.VITE_API_URL === 'development';
