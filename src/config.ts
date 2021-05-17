@@ -50,7 +50,7 @@ const config: Config = {
         message: 'Choose technology for api calls',
         choices: [
           { value: 'axios', name: 'Axios (REST)' },
-          { value: 'apollo', name: 'Apollo (GraphQL)', disabled: true }
+          { value: 'apollo', name: 'Apollo (GraphQL)' }
         ],
         default: defaultApi
       }
@@ -60,6 +60,7 @@ const config: Config = {
   endCmd: (opts) => [
     { command: 'git', args: ['init'] },
     { command: 'yarn', args: ['install'] },
+    opts.hasApollo && { command: 'yarn', args: ['project', 'graphql:build'] },
     { command: 'yarn', args: ['lint:fix'] },
     opts.update && { command: 'yarn', args: ['update', '-u'] },
     { command: 'git', args: ['add', '.'] },

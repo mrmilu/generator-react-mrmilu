@@ -8,3 +8,4 @@ tailwind.parsed.css
 .env
 .jest-test-results.json
 storybook/
+__generated__

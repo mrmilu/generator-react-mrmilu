@@ -1,0 +1,5 @@
+schema: "https://rickandmortyapi.com/graphql"
+generates:
+  ./schema.graphql:
+    plugins:
+      - schema-ast
