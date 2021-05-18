@@ -4,14 +4,9 @@ import { AccountsRepository } from "../../data/accounts.repository";
 import { Link, Switch } from 'react-router-dom';
 import { CustomRouteChildrenProps, RouteWithSubRoutes } from '../../../common/view/router/config';
 
-export interface AccountsListProps extends CustomRouteChildrenProps {
-  /**
-   * Get a page
-   */
-  page?: number;
-};
+export interface AccountsListProps extends CustomRouteChildrenProps {};
 
-function AccountsList({ page = 1, routes }: AccountsListProps) {
+function AccountsList({ routes }: AccountsListProps) {
   const [list, setList] = useState<AccountsListDataEntity[]>([]);
 
   useEffect(() => {
@@ -22,7 +17,7 @@ function AccountsList({ page = 1, routes }: AccountsListProps) {
       // eslint-disable-next-line no-console
       console.log(response)
     });
-  }, [page]);
+  }, []);
 
   return (
     <>
