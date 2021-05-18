@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.8.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.7.0...v1.8.0) (2021-05-18)
+
+
+### Features
+
+* finished apollo template, aded mutation method and also added fragments example ([b1cbb61](https://github.com/mrmilu/generator-react-mrmilu/commit/b1cbb61712dad964c67251c0f34f6d1a0a710975))
+
 # [1.7.0](https://github.com/mrmilu/generator-react-mrmilu/compare/v1.6.1...v1.7.0) (2021-05-17)
 
 
